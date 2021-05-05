@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    flex: 1 0 auto;
+}
+.card-action{
+    display: flex;
+}
+.action-item{
+    width: 50%;
+}
+.amount{
+    font-weight: bold;
+}

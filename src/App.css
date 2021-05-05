@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 80%;
+}
+
+body {
+    background-color: #057474;
+}
+
+footer {
+    background-color: #8de5c7 !important;
+}
+
+nav {
+    background-color: #8de5c7 !important;
+}
+
+.mainPage{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
