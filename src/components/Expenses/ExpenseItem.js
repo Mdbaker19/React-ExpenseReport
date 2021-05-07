@@ -5,22 +5,22 @@ import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
 
-    const [date, setDate] = useState(new Date(props.date));
+    const [date, setDate] = useState(props.date);
     const [title, setTitle] = useState(props.title);
     const [amount, setAmount] = useState(props.amount);
     const [due, setDue] = useState(props.due);
 
-    const payBill = () => {
-        setDue(due => !due);
+    const payBillHandler = () => {
+        setDue(!due);
     }
 
     return (
         <Card>
-            <ExpenseDate date={new Date(date)}/>
+            <ExpenseDate date={date}/>
             <p className="title center">Expense : {title}</p>
             <div className="card-action">
                 <p className="amount action-item">${amount}</p>
-                <button onClick={payBill} className="btn action-item">Need To Pay : {due.toString()}</button>
+                <button onClick={payBillHandler} className="btn action-item">Need To Pay : {due ? "Yes" : "No"}</button>
             </div>
         </Card>
     )
