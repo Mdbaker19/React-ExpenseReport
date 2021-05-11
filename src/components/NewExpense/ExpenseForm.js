@@ -24,13 +24,19 @@ const ExpenseForm = (props) => {
             return {...prevState, date : e.target.value};
         });
     }
+    const dueChangeHandler = (e) => {
+        setUserInput((prevState) => {
+            return {...prevState, due: e.target.checked};
+        });
+    }
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
         const expenseData = {
             title : userInput.title,
-            amount : userInput.amount,
-            date : new Date(userInput.date)
+            amount : +userInput.amount,
+            date : new Date(userInput.date),
+            due : userInput.due
         };
 
         props.onSaveData(expenseData);
@@ -42,8 +48,12 @@ const ExpenseForm = (props) => {
         });
     }
 
+    const cancelAddHandler = () => {
+        props.cancel();
+    }
+
     return (
-        <form className="col s12" onSubmit={formSubmitHandler}>
+        <form className="col s12 addForm" onSubmit={formSubmitHandler}>
             <div className="row">
                 <div className="input-field col s12">
                     <input id="title" type="text" value={userInput.title} onChange={titleChangeHandler} className="validate"/>
@@ -62,7 +72,16 @@ const ExpenseForm = (props) => {
                     <label htmlFor="date">Date</label>
                 </div>
             </div>
+            <div className="row">
+                <div className="input-field col s12">
+                    <label>
+                    <input id="due" type="checkbox" value={userInput.due} onChange={dueChangeHandler} min="2019-01-01" max="2022-12-31" className="validate"/>
+                        <span>Due</span>
+                    </label>
+                </div>
+            </div>
             <button className="btn">Add Expense</button>
+            <button className="btn" type="button" onClick={cancelAddHandler}>Cancel</button>
         </form>
     )
 }

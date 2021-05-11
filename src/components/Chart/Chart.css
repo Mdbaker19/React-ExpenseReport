@@ -1,0 +1,10 @@
+.chart{
+    display: flex;
+    justify-content: space-around;
+    height: 30vh;
+    align-items: flex-end;
+    border: 3px solid #731073;
+    border-radius: 5px;
+    background-color: #153c2e;
+    color: aliceblue;
+}

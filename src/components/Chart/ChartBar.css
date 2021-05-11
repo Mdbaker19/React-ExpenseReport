@@ -1,0 +1,16 @@
+.barInner{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid;
+    border-radius: 2px;
+}
+.barFill{
+    background-color: #8de5c7;
+    width: 100%;
+}
+.chartBar{
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+}

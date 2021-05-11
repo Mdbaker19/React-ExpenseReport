@@ -3,3 +3,16 @@
     margin: 0;
     padding: 0;
 }
+select{
+    display: block;
+}
+.addForm{
+    box-shadow: -10px 11px 14px 10px #055d5c;
+}
+.filterBox{
+    height: 10vh;
+    width: 50vw;
+}
+.fullForm{
+    width: 80vw;
+}
